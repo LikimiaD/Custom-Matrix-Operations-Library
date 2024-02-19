@@ -1,0 +1,8 @@
+# Useless files for container
+*.out
+*.a
+*.o
+functions/*.o
+
+# Useless .sh files
+git.sh
