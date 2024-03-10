@@ -1,5 +1,9 @@
 # Custom Matrix Operations Library
 
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+
 The Custom Matrix Operations Library (`custom_matrix`) is a static library developed in C11, aimed at providing a comprehensive set of operations for matrix manipulation. This library supports basic arithmetic operations, matrix transformations, and advanced computations such as determinant calculation and finding the inverse of a matrix. Developed with adherence to Google's C++ Style Guide and POSIX.1-2017 standards, this library ensures modern coding practices and compatibility.
 
 ## Installation
