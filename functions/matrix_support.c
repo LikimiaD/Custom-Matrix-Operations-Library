@@ -33,7 +33,8 @@ StatusCode calculate_minor(matrix_t *orig, int dodge_row, int dodge_col,
   }
 
   matrix_t minorMatrix;
-  status = custom_create_matrix(orig->rows - 1, orig->columns - 1, &minorMatrix);
+  status =
+      custom_create_matrix(orig->rows - 1, orig->columns - 1, &minorMatrix);
   if (status == OK) {
     int di = 0, dj = 0;
     for (size_t i = 0; i < minorMatrix.rows; i++) {
@@ -69,7 +70,8 @@ StatusCode fill_complements(matrix_t *A, matrix_t *result) {
   return status;
 }
 
-StatusCode custom_prepare_complements_matrix(matrix_t *A, matrix_t *complementsT) {
+StatusCode custom_prepare_complements_matrix(matrix_t *A,
+                                             matrix_t *complementsT) {
   StatusCode status = MATRIX_ERROR;
   matrix_t complements;
   if (custom_calc_complements(A, &complements) == OK) {
@@ -82,7 +84,7 @@ StatusCode custom_prepare_complements_matrix(matrix_t *A, matrix_t *complementsT
 }
 
 void custom_apply_inverse_formula(matrix_t *complementsT, double determinant,
-                               matrix_t *result) {
+                                  matrix_t *result) {
   for (size_t i = 0; i < complementsT->rows; i++) {
     for (size_t j = 0; j < complementsT->columns; j++) {
       result->matrix[i][j] = (1.0 / determinant) * complementsT->matrix[i][j];

@@ -1,20 +1,20 @@
 #ifndef SRC_CUSTOM_MATRIX_H_
 #define SRC_CUSTOM_MATRIX_H_
 
-#include <stdlib.h>
 #include <math.h>
+#include <stdlib.h>
 
 #define SUCCESS 1
 #define FAILURE 0
 
 #define EPSILON 1e-7
 
-typedef enum {OK, MATRIX_ERROR, ARITHMETIC_ERROR} StatusCode;
+typedef enum { OK, MATRIX_ERROR, ARITHMETIC_ERROR } StatusCode;
 
 typedef struct matrix_struct {
-    double** matrix;
-    int rows;
-    int columns;
+  double **matrix;
+  int rows;
+  int columns;
 } matrix_t;
 
 // matrix_core.c
@@ -34,9 +34,12 @@ int custom_determinant(matrix_t *A, double *result);
 
 // matrix_support.c
 StatusCode calculate_determinant(matrix_t *A, double *result);
-StatusCode calculate_minor(matrix_t *orig, int dodge_row, int dodge_col, double *result);
+StatusCode calculate_minor(matrix_t *orig, int dodge_row, int dodge_col,
+                           double *result);
 StatusCode fill_complements(matrix_t *A, matrix_t *result);
-StatusCode custom_prepare_complements_matrix(matrix_t *A, matrix_t *complementsT);
-void custom_apply_inverse_formula(matrix_t *complementsT, double determinant, matrix_t *result);
+StatusCode custom_prepare_complements_matrix(matrix_t *A,
+                                             matrix_t *complementsT);
+void custom_apply_inverse_formula(matrix_t *complementsT, double determinant,
+                                  matrix_t *result);
 
 #endif /* SRC_CUSTOM_MATRIX_H_ */
